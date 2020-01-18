@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://cos.blog.luogu.org/post-2008-nian-noip-pu-ji-zu -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="blog-uid" content="114293">
+<meta name="blog-name" content="cos_light">
+<meta name="current-user" content="114293">
+<meta name="theme-settings" content="{&quot;config&quot;:{&quot;background&quot;:{&quot;header&quot;:&quot;https:\/\/cdn.luogu.org\/upload\/pic\/34895.png&quot;},&quot;color&quot;:{&quot;primary&quot;:&quot;indigo&quot;,&quot;accent&quot;:&quot;pink&quot;},&quot;show_icon&quot;:true}}">
+<link rel="stylesheet" href="./2008年noip普及组 - cos_light - 洛谷博客_files/common.css">
+<style>
+      .mdblog-background {
+        background-image: url(https://cdn.luogu.org/upload/pic/34895.png);
+        max-height: 350px;
+      }
+    </style>
+<link rel="stylesheet" href="./2008年noip普及组 - cos_light - 洛谷博客_files/article.css">
+<title>2008年noip普及组 - cos_light - 洛谷博客</title>
+</head>
+<body class="mdui-theme-primary-indigo
+      mdui-theme-accent-pink mdui-loaded">
+<div class="mdblog-background">
+<nav class="mdui-shadow">
+<div id="small-header" class="mdui-appbar" style="position: fixed; z-index: 100; top: 0px; background-color: transparent;"><div id="topbar" class="mdui-toolbar mdui-color-theme"><a id="md-menu" class="mdui-btn mdui-btn-icon"><i mdui-drawer="{target: &#39;#mdblog-drawer&#39;, swipe: true, overlay: true}" class="mdui-icon material-icons">menu</i></a> <div class="mdui-toolbar-spacer"></div> <button class="mdui-btn mdui-btn-icon mdui-ripple" style="margin-right: 0px;"><i class="mdui-icon material-icons">search</i></button> <div class="mdui-textfield" style="margin-left: 0px;"><input type="text" placeholder="Search" class="mdui-textfield-input"></div></div></div>
+</nav>
+<div style="padding-top: 90px;padding-bottom: 40px">
+<img class="mdui-center mdui-img-circle" src="./2008年noip普及组 - cos_light - 洛谷博客_files/114293.png">
+<div class="mdui-valign">
+<a href="https://cos.blog.luogu.org/" class="mdui-center mdui-typo-display-2
+          mdui-text-color-white-text
+" style="
+         margin-bottom: 0;
+         margin-top: 15px;
+         text-decoration: none;
+      ">
+cos_light
+</a>
+</div>
+<div class="mdui-valign">
+<p class="mdui-center mdui-typo-subheading-opacity
+          mdui-text-color-white-text
+"> </p>
+</div>
+</div>
+</div>
+<main class="mdui-container-fluid" style="margin-top: 20px;">
+<section id="main-container" class=" mdui-col-md-8 mdui-col-offset-md-2">
+<div id="blog-container" data-blogid="71748" data-vote="0" data-thumbup="0">
+<div class="mdblog-article-container mdui-shadow-2 mdui-hoverable">
+<div class="mdui-typo-display-1-opacity">2008年noip普及组</div>
+<br>
+<div style="margin-bottom: 8px;">
+<div class="mdui-typo-caption-opacity  mdblog-article-time mdui-float-left">2018-09-30 16:12:02</div>
+<div id="vote-count" class="mdui-float-right"><i class="mdui-icon material-icons mdui-text-color-theme">thumb_up</i> <i class="mdui-typo-caption-opacity mdui-text-color-theme">0</i></div>
+</div>
+<br>
+<div class="mdui-typo"><hr></div>
+<div class="mdui-typo mdblog-article-content" id="article-content">
+<h1>INDEX2008</h1>
+<blockquote>
+<h3>T1_ISBN号码</h3>
+<h3>T2_排座椅</h3>
+<h3>T3_传球游戏</h3>
+<h3>T4_立体图</h3>
+<hr>
+<hr>
+</blockquote>
+<h2>T1_ISBN号码</h2>
+<p><strong>自古T1像海一样</strong></p>
+<p><strong><del>但我们要好生做</del></strong></p>
+<h3>题目回顾~</h3>
+<p><strong>~题目描述</strong></p>
+<p>每一本正式出版的图书都有一个ISBN号码与之对应，ISBN码包括9位数字、1位识别码和3位分隔符，其规定格式如“x-xxx-xxxxx-x”，其中符号“-”是分隔符（键盘上的减号），最后一位是识别码，例如0-670-82162-4就是一个标准的ISBN码。ISBN码的首位数字表示书籍的出版语言，例如0代表英语；第一个分隔符“-”之后的三位数字代表出版社，例如670代表维京出版社；第二个分隔之后的五位数字代表该书在出版社的编号；最后一位为识别码。</p>
+<p>识别码的计算方法如下：</p>
+<p>首位数字乘以1加上次位数字乘以2……以此类推，用所得的结果mod 11，所得的余数即为识别码，如果余数为10，则识别码为大写字母X。例如ISBN号码0-670-82162-4中的识别码4是这样得到的：对067082162这9个数字，从左至右，分别乘以1，2，…，9，再求和，即0×1+6×2+……+2×9=158，然后取158 mod 11的结果4作为识别码。</p>
+<p>你的任务是编写程序判断输入的ISBN号码中识别码是否正确，如果正确，则仅输出“Right”；如果错误，则输出你认为是正确的ISBN号码。</p>
+<p><strong>~输入描述:</strong></p>
+<p>只有一行，是一个字符序列，表示一本书的ISBN号码（保证输入符合ISBN号码的格式要求）。</p>
+<p><strong>~输出描述:</strong></p>
+<p>共一行，假如输入的ISBN号码的识别码正确，那么输出“Right”，否则，按照规定的格式，输出正确的ISBN号码（包括分隔符“-”）。</p>
+<hr>
+<p><strong><del>水题没有思路，用人脑在线模拟</del></strong></p>
+<h3>拆分代码~</h3>
+<p>首先，是将char型转化为int型。</p>
+<p>（输入美好，只有13位，显得很简单）
+特判，了解一下。</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">char</span> s[<span class="hljs-number">15</span>];
+    <span class="hljs-keyword">int</span> a[<span class="hljs-number">15</span>],ans,n;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">13</span>;i++)
+    {
+        <span class="hljs-built_in">cin</span>&gt;&gt;s[i];
+        <span class="hljs-keyword">if</span>(i!=<span class="hljs-number">2</span>&amp;&amp;i!=<span class="hljs-number">6</span>&amp;&amp;i!=<span class="hljs-number">12</span>)<span class="hljs-comment">//快乐特判</span>
+        {
+            n++;
+            a[n]=s[i]-<span class="hljs-string">'0'</span>;<span class="hljs-comment">//核心！</span>
+        }
+    }</code></pre>
+<p>然后开个变量ans存最后一位正确的答案。</p>
+<p>（13位，0~9，不用快速幂，就单纯的乘起来）然后%11</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n<span class="hljs-number">-1</span>;i++)
+    {
+        ans+=a[i]*i%<span class="hljs-number">11</span>;
+    }
+    ans=ans%<span class="hljs-number">11</span>;</code></pre>
+<p>最后是本水题最重要的地方。</p>
+<p>输出1~9并无毛病，然而10就得判断为X了。</p>
+<p>（<strong>包括判断输入最后一位对与否，与不对时我们来输出时，两个时候判断</strong>）</p>
+<p>//细节决定成败</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">if</span>((ans==a[n]&amp;&amp;ans&lt;<span class="hljs-number">10</span>)||(ans==<span class="hljs-number">10</span>&amp;&amp;a[n]==<span class="hljs-string">'X'</span>-<span class="hljs-string">'0'</span>))<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Right"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">else</span>
+    {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">12</span>;i++)<span class="hljs-built_in">cout</span>&lt;&lt;s[i];
+        <span class="hljs-keyword">if</span>(ans==<span class="hljs-number">10</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">'X'</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//输出正确也不能忘了10对应输出X </span>
+        <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//今天也记得落实结束程序语言</span>
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</code></pre>
+<p>快乐水题的完整代码</p>
+<pre><code class="hljs cpp">    <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+    <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+    <span class="hljs-keyword">char</span> s[<span class="hljs-number">15</span>];
+    <span class="hljs-keyword">int</span> a[<span class="hljs-number">15</span>],ans,n;
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">13</span>;i++)
+        {
+            <span class="hljs-built_in">cin</span>&gt;&gt;s[i];
+            <span class="hljs-keyword">if</span>(i!=<span class="hljs-number">2</span>&amp;&amp;i!=<span class="hljs-number">6</span>&amp;&amp;i!=<span class="hljs-number">12</span>)
+            {
+                n++;
+                a[n]=s[i]-<span class="hljs-string">'0'</span>;
+            }
+        }
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n<span class="hljs-number">-1</span>;i++)
+        {
+            ans+=a[i]*i%<span class="hljs-number">11</span>;
+        }
+        ans=ans%<span class="hljs-number">11</span>;
+        <span class="hljs-keyword">if</span>((ans==a[n]&amp;&amp;ans&lt;<span class="hljs-number">10</span>)||(ans==<span class="hljs-number">10</span>&amp;&amp;a[n]==<span class="hljs-string">'X'</span>-<span class="hljs-string">'0'</span>))<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">"Right"</span>&lt;&lt;<span class="hljs-built_in">endl</span>;
+        <span class="hljs-keyword">else</span>
+        {
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">12</span>;i++)<span class="hljs-built_in">cout</span>&lt;&lt;s[i];
+            <span class="hljs-keyword">if</span>(ans==<span class="hljs-number">10</span>)<span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">'X'</span>&lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//输出正确也不能忘了10对应输出X</span>
+            <span class="hljs-keyword">else</span> <span class="hljs-built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="hljs-built_in">endl</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//今天也记得落实结束程序语言</span>
+    }</code></pre>
+<p>（cos的标准over）●v●</p>
+<hr>
+<hr>
+<h2>T2_排座椅</h2>
+<p><strong><del>这题就是P老板</del></strong> </p>
+<h3><strong>但我还是要写完整的过程</strong></h3>
+<p><strong><del>给自己洗脑，你没有考过这道题，你没有替plp打过工</del></strong></p>
+<h3>题目回顾~</h3>
+<p><strong>~题目描述</strong></p>
+<p>上课的时候总有一些同学和前后左右的人交头接耳，这是令小学班主任十分头疼的一件事情。不过，班主任小雪发现了一些有趣的现象，当同学们的座次确定下来之后，只有有限的D对同学上课时会交头接耳。同学们在教室中坐成了M行N列，坐在第i行第j列的同学的位置是（i，j），为了方便同学们进出，在教室中设置了K条横向的通道，L条纵向的通道。于是，聪明的小雪想到了一个办法，或许可以减少上课时学生交头接耳的问题：她打算重新摆放桌椅，改变同学们桌椅间通道的位置，因为如果一条通道隔开了两个会交头接耳的同学，那么他们就不会交头接耳了。</p>
+<p>请你帮忙给小雪编写一个程序，给出最好的通道划分方案。在该方案下，上课时交头接耳的学生对数最少。</p>
+<p><strong>~输入描述:</strong>
+第一行，有5各用空格隔开的整数，分别是M，N，K，L，D（2 ≤ N，M ≤ 1000，0 ≤ K &lt; M，0 ≤ L &lt; N，D ≤ 2000）。</p>
+<p>接下来D行，每行有4个用空格隔开的整数，第i行的4个整数Xi，Yi，Pi，Qi，表示坐在位置(Xi,Yi)与(Pi,Qi)的两个同学会交头接耳（输入保证他们前后相邻或者左右相邻）。</p>
+<p>输入数据保证最优方案的唯一性。</p>
+<p><strong>~输出描述:</strong></p>
+<p>第一行包含K个整数，a1a2……aK，表示第a1行和a1+1行之间、第a2行和第a2+1行之间、…、第aK行和第aK+1行之间要开辟通道，其中ai &lt; ai+1，每两个整数之间用空格隔开（行尾没有空格）。</p>
+<p>第二行包含L个整数，b1b2……bk，表示第b1列和b1+1列之间、第b2列和第b2+1列之间、…、第bL列和第bL+1列之间要开辟通道，其中bi&lt; bi+1，每两个整数之间用空格隔开（行尾没有空格）。</p>
+<hr>
+<h3>思路~</h3>
+<p>当我们看见“<strong>最好的通道划分方案</strong>”这几个字的时候就应该想到 <em><strong>贪心</strong></em> 。</p>
+<p>我们贪心贪的是选择的所划分的这一列（行）可以分开尽量多的，要交头接耳的对娃儿。但同时不是每组娃儿我们都一定可以拆开他们，因为k和l就是来限制的。</p>
+<p>为了方便解释，我个人定义了说话值：
+<strong>若这列（行）可以分开说话的n组娃儿，那么就假定n为这列（行）的说话值</strong></p>
+<p>因此我们就可以自然而然地想到将列（行）按说话值从大到小==排序==，找到最大的前k（l）个，并输出（over）</p>
+<hr>
+<h3>拆分代码~</h3>
+<p><strong>输入：</strong>
+x,y数组分别存行和列</p>
+<pre><code class="hljs cpp">    <span class="hljs-built_in">cin</span>&gt;&gt;m&gt;&gt;n&gt;&gt;k&gt;&gt;l&gt;&gt;d;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=d;i++)
+    {
+        <span class="hljs-keyword">int</span> a1,b1,a2,b2;
+        <span class="hljs-built_in">cin</span>&gt;&gt;a1&gt;&gt;b1&gt;&gt;a2&gt;&gt;b2;
+        <span class="hljs-keyword">if</span>(a1==a2)y[min(b1,b2)]++;<span class="hljs-comment">//隔开第c和c+1行可以分开说话的娃儿组数++ </span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(b1==b2)x[min(a1,a2)]++;<span class="hljs-comment">//隔开第c和c+1列可以分开说话的娃儿组数++ </span>
+    }</code></pre>
+<p><strong>核心代码：</strong></p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++) 
+    {
+        <span class="hljs-keyword">int</span> maxx=<span class="hljs-number">-1</span>,a;<span class="hljs-comment">//每次找第i大的，都要重新置maxx为-1 </span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=m;j++)<span class="hljs-comment">//最大1000，可以二层循环扫一遍找最大 </span>
+        {
+            <span class="hljs-keyword">if</span>(x[j]&gt;maxx)
+            {
+                maxx=x[j];<span class="hljs-comment">//更新最大值</span>
+                a=j;<span class="hljs-comment">//存储说话值目前最大的位置 </span>
+            }
+        }
+        x[a]=<span class="hljs-number">0</span>;<span class="hljs-comment">//找到目前最大的，置0，再找次大的</span>
+        t1[a]++;
+    }
+    <span class="hljs-comment">//接着可以复制粘贴略加修改搞定列</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=l;i++) 
+    {
+        <span class="hljs-keyword">int</span> maxx=<span class="hljs-number">-1</span>,a;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=n;j++)
+            <span class="hljs-keyword">if</span>(y[j]&gt;maxx)
+            {
+                maxx=y[j];
+                a=j;
+            }
+        y[a]=<span class="hljs-number">0</span>;
+        t2[a]++;
+    }</code></pre>
+<p><strong><del>我个人认为</del>，接下来是很重要的踏踏</strong></p>
+<p>输出描述中要求要顺序输出emmm
+在核心代码中，在找到最大值后用数组存储。</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">int</span> t1[N],t2[N];</code></pre>
+<p>因此下面这样输出</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)
+        <span class="hljs-keyword">if</span>(t1[i])<span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">' '</span>;
+
+    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)
+        <span class="hljs-keyword">if</span>(t2[i])<span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">' '</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//今天也要落实程序结束语言</span></code></pre>
+<p>同时，可以参考一哈同意dalao的代码</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++) <span class="hljs-comment">//先找前k个横向的 </span>
+    {
+        <span class="hljs-keyword">int</span> maxn=<span class="hljs-number">-1</span>,maxb=<span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;n;j++)
+            <span class="hljs-keyword">if</span>(kk[j]&gt;maxn)
+                maxb=j,maxn=kk[j];
+        kk[maxb]=<span class="hljs-number">0</span>;
+        kkk[++totk]=maxb;
+    }
+    stable_sort(kkk+<span class="hljs-number">1</span>,kkk+<span class="hljs-number">1</span>+k,cmp);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++) <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>,kkk[i]);
+    <span class="hljs-built_in">puts</span>(<span class="hljs-string">""</span>);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=l;i++)<span class="hljs-comment">//找前l个纵向的 </span>
+    {
+        <span class="hljs-keyword">int</span> maxn=<span class="hljs-number">-1</span>,maxb=<span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;m;j++)
+            <span class="hljs-keyword">if</span>(ll[j] &gt; maxn)
+                maxb=j,maxn=ll[j];
+        ll[maxb]=<span class="hljs-number">0</span>;
+        lll[++totl]=maxb;
+    }
+    stable_sort(lll+<span class="hljs-number">1</span>,lll+<span class="hljs-number">1</span>+l,cmp);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=l;i++) <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d "</span>,lll[i]);</code></pre>
+<hr>
+<h4><del>结尾彩蛋</del></h4>
+<p>值得一提的是，输出描述中有这样不起眼的一句：“每两个整数之间用空格隔开（<strong>行尾没有空格</strong>）”</p>
+<p>亲测，这是不存在的条件，不需要立什么flag。OVO</p>
+<p>最后，附上完整代码：</p>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> N 1031</span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> m,n,k,l,d,x[N],y[N];
+<span class="hljs-keyword">int</span> t1[N],t2[N];
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">cin</span>&gt;&gt;m&gt;&gt;n&gt;&gt;k&gt;&gt;l&gt;&gt;d;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=d;i++)
+    {
+        <span class="hljs-keyword">int</span> a1,b1,a2,b2;
+        <span class="hljs-built_in">cin</span>&gt;&gt;a1&gt;&gt;b1&gt;&gt;a2&gt;&gt;b2;
+        <span class="hljs-keyword">if</span>(a1==a2)y[min(b1,b2)]++;<span class="hljs-comment">//隔开第c和c+1行可以分开说话的娃儿组数++</span>
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(b1==b2)x[min(a1,a2)]++;<span class="hljs-comment">//隔开第c和c+1列可以分开说话的娃儿组数++</span>
+    }
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++)
+    {
+        <span class="hljs-keyword">int</span> maxx=<span class="hljs-number">-1</span>,a;<span class="hljs-comment">//每次找第i大的，都要重新置maxx为-1</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=m;j++)<span class="hljs-comment">//数据1000，可以二层循环扫一遍最大</span>
+        {
+            <span class="hljs-keyword">if</span>(x[j]&gt;maxx)
+            {
+                maxx=x[j];<span class="hljs-comment">//更新最大值</span>
+                a=j;<span class="hljs-comment">//存储说话值目前最大那行的位置</span>
+            }
+        }
+        x[a]=<span class="hljs-number">0</span>;<span class="hljs-comment">//目前最大的置0，为了找次大的</span>
+        t1[a]++;
+    }
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=l;i++)<span class="hljs-comment">//嗝，同上找行，复制粘贴找列</span>
+    {
+        <span class="hljs-keyword">int</span> maxx=<span class="hljs-number">-1</span>,a;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=n;j++)
+            <span class="hljs-keyword">if</span>(y[j]&gt;maxx)
+            {
+                maxx=y[j];
+                a=j;
+            }
+        y[a]=<span class="hljs-number">0</span>;
+        t2[a]++;
+    }
+    <span class="hljs-comment">//以下是输出</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)
+        <span class="hljs-keyword">if</span>(t1[i])<span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">' '</span>;
+    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)
+        <span class="hljs-keyword">if</span>(t2[i])<span class="hljs-built_in">cout</span>&lt;&lt;i&lt;&lt;<span class="hljs-string">' '</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//今天也要有精致的程序结束语言</span>
+}</code></pre>
+<p>（cos的标准over）●v●</p>
+<hr>
+<hr>
+<h2>T3_传球游戏</h2>
+<p><strong><del>首先恭喜你2014年普及组搞到了两百分</del></strong></p>
+<h3>题目回顾~</h3>
+<p><strong>~题目描述</strong></p>
+<p>传球游戏的规则是这样的：n个同学站成一个圆圈，其中的一个同学手里拿着一个球，当老师吹哨子时开始传球，每个同学可以把球传给自己左右的两个同学中的一个（左右任意），当老师再次吹哨子时，传球停止，此时，拿着球没传出去的那个同学就是败者，要给大家表演一个节目。</p>
+<p>聪明的小蛮提出一个有趣的问题：有多少种不同的传球方法可以使得从小蛮手里开始传的球，传了m次以后，又回到小蛮手里。两种传球的方法被视作不同的方法，当且仅当这两种方法中，接到球的同学按接球顺序组成的序列是不同的。比如有3个同学1号、2号、3号，并假设小蛮为1号，球传了3次回到小蛮手里的方式有1-&gt;2-&gt;3-&gt;1和1-&gt;3-&gt;2-&gt;1，共2种。</p>
+<p><strong>~输入描述:</strong></p>
+<p>共一行，有两个用空格隔开的整数n，m（ 3 ≤ n ≤ 30，1 ≤ m ≤ 30 ）。</p>
+<p><strong>~输出描述:</strong></p>
+<p>共一行，有一个整数，表示符合题意的方法数。</p>
+<hr>
+<h3>思路~</h3>
+<p>n个同学，传递m次，因此小蛮是多少号并不重要。</p>
+<p>假定小蛮的编号为i，不管经过多少次，小蛮手上的球只可能从i-1号同学或i+1号同学手中传来。类推下去，这是一道<strong> <em>动规</em></strong> 题</p>
+<p>设f[i][k]表示经过k次传到编号为i的人手中的方案数，
+i号左右两边同学的编号分别是i-1和i+1，所以可以得到以下的递推公式：</p>
+<pre><code class="hljs cpp">    f[i][k]=f[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>]+f[i+<span class="hljs-number">1</span>][k<span class="hljs-number">-1</span>];<span class="hljs-comment">//核心代码就这样，迪屁的方式并不唯一，本蒟蒻就只安排了一种,详情可见洛谷oj</span></code></pre>
+<hr>
+<h3>细节~</h3>
+<p><strong>(1)i=1或n时，需要单独处理，形成环（eg.）</strong></p>
+<p><strong>(2)由于递推公式设计到k-1,因此在处理f[1][0]=1</strong></p>
+<h3><del>拆不了代码，太短了</del></h3>
+<pre><code class="hljs cpp">    <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+    <span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+    <span class="hljs-keyword">int</span> n,m,f[<span class="hljs-number">31</span>][<span class="hljs-number">31</span>];
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+    </span>{
+        <span class="hljs-built_in">cin</span>&gt;&gt;n&gt;&gt;m;
+        f[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]=<span class="hljs-number">1</span>;<span class="hljs-comment">//(2)!!!</span>
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">1</span>;k&lt;=m;k++)
+        {
+            f[<span class="hljs-number">1</span>][k]=f[<span class="hljs-number">2</span>][k<span class="hljs-number">-1</span>]+f[n][k<span class="hljs-number">-1</span>];<span class="hljs-comment">//(1)!!!!</span>
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>;i&lt;=n<span class="hljs-number">-1</span>;i++)<span class="hljs-comment">//由于(1)改变了循环起始</span>
+            {
+                f[i][k]=f[i<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>]+f[i+<span class="hljs-number">1</span>][k<span class="hljs-number">-1</span>];
+            }
+            f[n][k]=f[n<span class="hljs-number">-1</span>][k<span class="hljs-number">-1</span>]+f[<span class="hljs-number">1</span>][k<span class="hljs-number">-1</span>];<span class="hljs-comment">//(1)!!!!</span>
+        }
+        <span class="hljs-built_in">cout</span>&lt;&lt;f[<span class="hljs-number">1</span>][m]&lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//传球过程从1号开始，从1号结束</span>
+        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//今天你落实程序结束语言了吗？</span>
+    }</code></pre>
+<p>（cos的标准over）●v●</p>
+<hr>
+<hr>
+<h2>T4_立体图</h2>
+<p><strong><del>终于到了最后一道题</del></strong></p>
+<h3>首先我们作为南高之光不能被麻烦的输出吓到</h3>
+<p><strong>气势不能输！！！</strong></p>
+<h3>题目回顾~</h3>
+<p><strong>~题目描述</strong></p>
+<p>小渊是个聪明的孩子，他经常会给周围的小朋友们讲些自己认为有趣的内容。最近，他准备给小朋友们讲解立体图，请你帮他画出立体图。</p>
+<p>小渊有一块面积为m<em>n的矩形区域，上面有m</em>n个边长为1的格子，每个格子上堆了一些同样大小的吉姆（积木的长宽高都是1），小渊想请你打印出这些格子的立体图。我们定义每个积木为如下格式，并且不会做任何翻转旋转，只会严格以这一种形式摆放：</p>
+<p>每个顶点用1个加号’+’表示，长用3个”-“表示，宽用1个”/”表示，高用两个”|”表示。字符’+’，‘-‘，’/’，‘|’的ASCII码分别为43，45，47，124。字符’.’（ASCII码46）需要作为背景输出，即立体图里的空白部分需要用’.’代替。立体图的画法如下面的规则：</p>
+<p>立体图中，定义位于第(m,1)的格子（即第m行第1列的格子）上面自底向上的第一块积木（即最下面的一块积木）的左下角顶点为整张图最左下角的点。</p>
+<p><strong>输入描述:</strong></p>
+<p>第一行有用空格隔开的两个整数m和n，表示有m<em>n个格子（1 ≤ m，n ≤ 50）。
+接下来的m行，是一个m</em>n的矩阵，每行有n个用空格隔开的整数，其中第i行第j列上的整数表示第i行第j列的格子上摞有多少个积木（1 ≤ 每个格子上的积木 ≤ 100）。</p>
+<p><strong>输出描述:</strong></p>
+<p>题目要求的立体图，是一个K行L列的字符矩阵，其中K和L表示最少需要K行L列才能按规定输出立体图。</p>
+<hr>
+<h3>思路~</h3>
+<p>题意很好理解，就是一道数学题，输出一堆搭起来的积木立体图。</p>
+<p>一块吉姆可以很好地输出，只是看<del>复杂的</del>输出，难在很多块积木搭在一起覆盖了很多，没有吉姆的地方还有‘.’许多小点。</p>
+<p>因此，我们就应该将一块积木看成一个整体，按顺序逐一覆盖（模拟现实中的搭积木）。
+综上，这是一道很繁琐的 <em><strong>模拟</strong></em> 题。</p>
+<p>其难点在每块积木应该覆盖的位置坐标。(拆分代码时再说)</p>
+<hr>
+<h3>拆分代码~</h3>
+<p>首先，我们要落实简单的一块小积木。</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> c[<span class="hljs-number">12</span>][<span class="hljs-number">12</span>]=
+    {
+    <span class="hljs-string">"..+---+"</span>,
+    <span class="hljs-string">"./   /|"</span>,
+    <span class="hljs-string">"+---+ |"</span>,
+    <span class="hljs-string">"|   | +"</span>,
+    <span class="hljs-string">"|   |/."</span>,
+    <span class="hljs-string">"+---+.."</span>
+    };<span class="hljs-comment">//这样定义比较立体</span></code></pre>
+<p>我们直奔How to输出。很显然，输出的char矩阵和输入不等。</p>
+<p>所以，<strong>本题的第一个重点来了——计算出输出的行数和列数</strong>。</p>
+<p>列数比较简单</p>
+<pre><code class="hljs cpp"><span class="hljs-keyword">int</span> ll=m*<span class="hljs-number">2</span>+<span class="hljs-number">4</span>*n+<span class="hljs-number">1</span>;<span class="hljs-comment">//输出的列数</span></code></pre>
+<p>行数相对比较麻烦，我们要计算出每一个（关键是靠后的和顶端）的积木顶层所到达的高度（平面抽象为行数）</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=n;j++)
+        {
+            <span class="hljs-keyword">int</span> z=m-i+<span class="hljs-number">1</span>;
+            k=max(k,<span class="hljs-number">2</span>*z+<span class="hljs-number">1</span>+<span class="hljs-number">3</span>*a[i][j]);<span class="hljs-comment">//输出的行数 </span>
+        }</code></pre>
+<p>（样例）</p>
+<pre><code class="hljs cpp">     ABCDEFGHIJKLMNOPQRSTUVW<span class="hljs-comment">//1~23</span>
+    A......+---+---+...+---+
+    B..+---+  /   /|../   /|
+    C./   /|-+---+ |.+---+ |
+    D+---+ |/   /| +-|   | +
+    E|   | +---+ |/+---+ |/|
+    F|   |/   /| +/   /|-+ |
+    G+---+---+ |/+---+ |/| +
+    H|   |   | +-|   | + |/.
+    I|   |   |/  |   |/| +..
+    J+---+---+---+---+ |/...
+    K|   |   |   |   | +....
+    L|   |   |   |   |/.....
+    M+---+---+---+---+......
+    <span class="hljs-comment">//1~13</span></code></pre>
+<p>可以<strong>开始搭积木</strong>了！</p>
+<p>首先，打地基，全部覆盖为小点</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++)
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=ll;j++)
+            ans[i][j]=<span class="hljs-string">'.'</span>;<span class="hljs-comment">//将输出覆盖成'.'背景</span></code></pre>
+<p><strong>本题的第二个重点来了——计算积木应当摆放的坐标</strong>，</p>
+<p>显而易见，我们应当从后往前，从下往上，从左往右进行摆放，这样可以处理好遮挡的问题，因为此题的观察视角是右上方</p>
+<p>调用函数build()，将单块吉姆丢进去。</p>
+<pre><code class="hljs cpp">    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)
+    {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=n;j++)
+        {
+            x=k<span class="hljs-number">-2</span>*(m-i);
+            y=<span class="hljs-number">2</span>*(m-i)+<span class="hljs-number">4</span>*(j<span class="hljs-number">-1</span>)+<span class="hljs-number">1</span>;<span class="hljs-comment">//计算坐标</span>
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">1</span>;k&lt;=a[i][j];k++)
+            {
+                build(x,y);<span class="hljs-comment">//调用建筑函数</span>
+                x-=<span class="hljs-number">3</span>;
+            }
+        }
+    }
+</code></pre>
+<p>build函数</p>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-keyword">int</span> xx,<span class="hljs-keyword">int</span> yy)</span>
+</span>{
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">6</span>;i++)
+    {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">7</span>;j++)
+        {
+            <span class="hljs-keyword">if</span>(c[<span class="hljs-number">6</span>-i<span class="hljs-number">-1</span>][j]!=<span class="hljs-string">'.'</span>)
+                ans[xx-i][yy+j]=c[<span class="hljs-number">6</span>-i<span class="hljs-number">-1</span>][j];<span class="hljs-comment">//!</span>
+        }
+    }
+}</code></pre>
+<p>最后简单输出ans二维数组。</p>
+<hr>
+<p>完整代码：</p>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> n,m,a[<span class="hljs-number">51</span>][<span class="hljs-number">51</span>],x,y;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> c[<span class="hljs-number">6</span>][<span class="hljs-number">8</span>]=
+{
+    <span class="hljs-string">"..+---+"</span>,
+    <span class="hljs-string">"./   /|"</span>,
+    <span class="hljs-string">"+---+ |"</span>,
+    <span class="hljs-string">"|   | +"</span>,
+    <span class="hljs-string">"|   |/."</span>,
+    <span class="hljs-string">"+---+.."</span>
+};
+<span class="hljs-keyword">char</span> ans[<span class="hljs-number">1031</span>][<span class="hljs-number">1031</span>];
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">build</span><span class="hljs-params">(<span class="hljs-keyword">int</span> xx,<span class="hljs-keyword">int</span> yy)</span>
+</span>{
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-number">6</span>;i++)
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">0</span>;j&lt;<span class="hljs-number">7</span>;j++)
+            <span class="hljs-keyword">if</span>(c[<span class="hljs-number">6</span>-i<span class="hljs-number">-1</span>][j]!=<span class="hljs-string">'.'</span>)
+                ans[xx-i][yy+j]=c[<span class="hljs-number">6</span>-i<span class="hljs-number">-1</span>][j];
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">cin</span>&gt;&gt;m&gt;&gt;n;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=n;j++)
+            <span class="hljs-built_in">cin</span>&gt;&gt;a[i][j];
+<span class="hljs-comment">//以上为输入</span>
+    <span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>,ll=m*<span class="hljs-number">2</span>+<span class="hljs-number">4</span>*n+<span class="hljs-number">1</span>;<span class="hljs-comment">//ll为列数</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=n;j++)
+        {
+            <span class="hljs-keyword">int</span> z=m-i+<span class="hljs-number">1</span>;
+            k=max(k,<span class="hljs-number">2</span>*z+<span class="hljs-number">1</span>+<span class="hljs-number">3</span>*a[i][j]);<span class="hljs-comment">//k为行数</span>
+        }
+<span class="hljs-comment">//计算输出格式大小</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++)
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=ll;j++)
+            ans[i][j]=<span class="hljs-string">'.'</span>;
+<span class="hljs-comment">//以上为ans数组初始化</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=m;i++)
+    {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=n;j++)
+        {
+            x=k<span class="hljs-number">-2</span>*(m-i);
+            y=<span class="hljs-number">2</span>*(m-i)+<span class="hljs-number">4</span>*(j<span class="hljs-number">-1</span>)+<span class="hljs-number">1</span>;
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> k=<span class="hljs-number">1</span>;k&lt;=a[i][j];k++)
+            {
+                build(x,y);
+                x-=<span class="hljs-number">3</span>;
+            }
+        }
+    }
+<span class="hljs-comment">//以上为搭积木重点工程</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=k;i++)
+    {
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=ll;j++)<span class="hljs-built_in">cout</span>&lt;&lt;ans[i][j];
+        <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-built_in">endl</span>;
+    }
+<span class="hljs-comment">//简单的输出</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<span class="hljs-comment">//今天不落实程序结束语言，明天noip悔恨一年</span>
+}</code></pre>
+<p>（cos的标准over）●v●</p>
+<hr>
+<hr>
+<p><strong>That's all.</strong></p>
+<p><strong>Thank you.</strong></p>
+</div>
+</div>
+<div id="blog-comments" class="mdui-shadow-2 mdui-hoverable" style="padding: 40px; margin-top: 15px;"><div class="mdui-valign" style="margin-bottom: 30px;"><div class="mdui-textfield mdui-textfield-floating-label mdui-float-left" style="width: 95%; margin-right: 20px;"><label class="mdui-textfield-label">评论</label> <textarea class="mdui-textfield-input mdui-float-left-right"></textarea></div> <button class="mdblog-comment-send-btn mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">send</i></button></div> <div class="mdblog-comments mdui-container"> <div class="mdui-valign" style="margin: 30px;"><div class="mdui-center"><!----></div></div></div></div>
+<div id="vote-buttons" mdui-fab="options" class="mdui-fab-wrapper"><button class="mdui-fab mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">add</i> <i id="mdblog-scroll" class="mdui-icon mdui-fab-opened material-icons">keyboard_arrow_up</i></button> <div class="mdui-fab-dial"><button hidden="hidden" class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-red"><i class="mdui-icon material-icons">cancel</i></button> <button class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-red"><i class="mdui-icon material-icons">thumb_up</i></button> <button class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-teal"><i class="mdui-icon material-icons">thumb_down</i></button> <a href="https://cos.blog.luogu.org/post-2008-nian-noip-pu-ji-zu#blog-comments" class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-orange"><i class="mdui-icon material-icons">chat</i></a> <a href="https://www.luogu.org/blogAdmin/article/edit/71748" class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue"><i class="mdui-icon material-icons">edit</i></a></div></div>
+</div>
+<link rel="stylesheet" href="./2008年noip普及组 - cos_light - 洛谷博客_files/katex.css">
+</section>
+</main>
+<section>
+<div class="mdui-drawer mdui-drawer-close" id="mdblog-drawer">
+<ul class="mdui-list">
+<li onclick="window.location.href=&#39;.&#39;;" class="mdui-list-item mdui-ripple">
+<i class="mdui-list-item-icon mdui-icon material-icons">star</i>
+<div class="mdui-list-item-content">首页</div>
+</li>
+<li onclick="window.location.href=&#39;https://www.luogu.org/blogAdmin&#39;;" class="mdui-list-item mdui-ripple">
+<i class="mdui-list-item-icon mdui-icon material-icons">error</i>
+<div class="mdui-list-item-content">管理后台</div>
+</li>
+</ul>
+</div>
+</section>
+<br>
+<footer class="mdui-color-theme">
+<div class="mdui-valign">
+<p class="mdui-center">
+自豪地采用<a href="https://www.luogu.org/" style="color: white;">洛谷</a>博客&nbsp;
+Theme mdblog by <a href="https://darkflames.blog.luogu.org/" style="color: white;">darkflames</a>. <a href="https://cos.blog.luogu.org/_sitemap">Site Map</a>
+</p>
+</div>
+</footer>
+<script>
+window.BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  isAuthor: (this.blogUID === this.currentUser),
+  luoguAddress: 'https://www.luogu.org',
+  picAddress: 'https://cdn.luogu.org',
+  config: JSON.parse(document.querySelector('meta[name=theme-settings]').getAttribute('content'))
+}
+</script>
+<script src="./2008年noip普及组 - cos_light - 洛谷博客_files/common.js"></script>
+<script>
+var blogContainer = document.getElementById('blog-container')
+BlogGlobals.blogID = parseInt(blogContainer.getAttribute('data-blogid'))
+BlogGlobals.vote = parseInt(blogContainer.getAttribute('data-vote'))
+BlogGlobals.thumbUp = parseInt(blogContainer.getAttribute('data-thumbUp'))
+</script>
+<script src="./2008年noip普及组 - cos_light - 洛谷博客_files/article.js"></script>
+
+
+</body></html>

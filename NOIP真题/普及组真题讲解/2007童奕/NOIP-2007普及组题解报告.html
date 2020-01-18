@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)https://www.luogu.org/blog/tythen/noip-2007 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="blog-uid" content="114291">
+<meta name="blog-name" content="ty的笔记本">
+<meta name="current-user" content="114291">
+<meta name="theme-settings" content="{&quot;config&quot;:{&quot;background&quot;:{&quot;header&quot;:&quot;https:\/\/raw.githubusercontent.com\/tythen\/MyWeb\/master\/44873217_p0.jpg&quot;},&quot;color&quot;:{&quot;primary&quot;:&quot;indigo&quot;,&quot;accent&quot;:&quot;pink&quot;},&quot;show_icon&quot;:false}}">
+<link rel="stylesheet" href="./NOIP-2007普及组题解报告 - ty的笔记本 - 洛谷博客_files/common.css">
+<style>
+      .mdblog-background {
+        background-image: url(https://raw.githubusercontent.com/tythen/MyWeb/master/44873217_p0.jpg);
+        max-height: 350px;
+      }
+    </style>
+<link rel="stylesheet" href="./NOIP-2007普及组题解报告 - ty的笔记本 - 洛谷博客_files/article.css">
+<title>NOIP-2007普及组题解报告 - ty的笔记本 - 洛谷博客</title>
+</head>
+<body class="mdui-theme-primary-indigo
+      mdui-theme-accent-pink mdui-loaded">
+<div class="mdblog-background">
+<nav class="mdui-shadow">
+<div id="small-header" class="mdui-appbar mdui-shadow-0" style="position: fixed; z-index: 100; top: 0px; background-color: transparent;"><div id="topbar" class="mdui-toolbar "><a id="md-menu" class="mdui-btn mdui-btn-icon"><i mdui-drawer="{target: &#39;#mdblog-drawer&#39;, swipe: true, overlay: true}" class="mdui-icon material-icons">menu</i></a> <div class="mdui-toolbar-spacer"></div> <button class="mdui-btn mdui-btn-icon mdui-ripple" style="margin-right: 0px;"><i class="mdui-icon material-icons">search</i></button> <div class="mdui-textfield" style="margin-left: 0px;"><input type="text" placeholder="Search" class="mdui-textfield-input"></div></div></div>
+</nav>
+<div style="padding-top: 90px;padding-bottom: 40px">
+<img class="mdui-center mdui-img-circle" src="./NOIP-2007普及组题解报告 - ty的笔记本 - 洛谷博客_files/114291.png" style="visibility: hidden">
+<div class="mdui-valign">
+<a href="https://www.luogu.org/blog/tythen/" class="mdui-center mdui-typo-display-2
+          mdui-text-color-white-text
+" style="
+         margin-bottom: 0;
+         margin-top: 15px;
+         text-decoration: none;
+      ">
+ty的笔记本
+</a>
+</div>
+<div class="mdui-valign">
+<p class="mdui-center mdui-typo-subheading-opacity
+          mdui-text-color-white-text
+">蒟蒻 </p>
+</div>
+</div>
+</div>
+<main class="mdui-container-fluid" style="margin-top: 20px;">
+<section id="main-container" class=" mdui-col-md-8 mdui-col-offset-md-2">
+<div id="blog-container" data-blogid="70378" data-vote="0" data-thumbup="0">
+<div class="mdblog-article-container mdui-shadow-2 mdui-hoverable">
+<div class="mdui-typo-display-1-opacity">NOIP-2007普及组题解报告</div>
+<br>
+<div style="margin-bottom: 8px;">
+<div class="mdui-typo-caption-opacity  mdblog-article-time mdui-float-left">2018-09-25 15:18:14</div>
+<div id="vote-count" class="mdui-float-right"><i class="mdui-icon material-icons mdui-text-color-theme">thumb_up</i> <i class="mdui-typo-caption-opacity mdui-text-color-theme">0</i></div>
+</div>
+<br>
+<div class="mdui-typo"><hr></div>
+<div class="mdui-typo mdblog-article-content" id="article-content">
+<h1>INDEX</h1>
+<blockquote>
+<h3>T1 奖学金</h3>
+<h3>T2 纪念品分组</h3>
+<h3>T3 守望者的逃离</h3>
+<h3>T4 Hanoi双塔问题</h3>
+</blockquote>
+<hr>
+<h2>T1 奖学金</h2>
+<h6>题目描述</h6>
+<blockquote>
+<p>某小学最近得到了一笔赞助，打算拿出其中一部分为学习成绩优秀的前5名学生发奖学金。期末，每个学生都有3门课的成绩:语文、数学、英语。先按总分从高到低排序，如果两个同学总分相同，再按语文成绩从高到低排序，如果两个同学总分和语文成绩都相同，那么规定学号小的同学 排在前面，这样，每个学生的排序是唯一确定的。
+任务：先根据输入的3门课的成绩计算总分，然后按上述规则排序，最后按排名顺序输出前五名名学生的学号和总分。注意，在前5名同学中，每个人的奖学金都不相同，因此，你必须严格按上述规则排序。例如，在某个正确答案中，如果前两行的输出数据(每行输出两个数:学号、总分) 是:<br>
+7 279<br>
+5 279<br>
+这两行数据的含义是:总分最高的两个同学的学号依次是7号、5号。这两名同学的总分都是 279 (总分等于输入的语文、数学、英语三科成绩之和) ，但学号为7的学生语文成绩更高一些。如果你的前两名的输出数据是:<br>
+5 279<br>
+7 279<br>
+则按输出错误处理，不能得分 </p>
+</blockquote>
+<h6>输入描述</h6>
+<blockquote>
+<p>第1行为一个正整数n，表示该校参加评选的学生人数。<br>
+第2到n+1行，每行有3个用空格隔开的数字，每个数字都在O到100之间z第1行的3个数 字依次表示学号为j-1的学生的语文、数学、英语的成绩。每个学生的学号按照输入顺序编号为l~n (恰好是输入数据的行号减1)。<br>
+所给的数据都是正确的，不必检验。 </p>
+</blockquote>
+<h6>输出描述:</h6>
+<blockquote>
+<p>共有5行，每行是两个用空格隔开的正整数，依次表示前5名学生的学号和总分。</p>
+</blockquote>
+<h3>题目算法</h3>
+<blockquote>
+<p>排序、<del>cmp函数的写法</del> </p>
+</blockquote>
+<h3>思路</h3>
+<p>真的水题，而且大家都在某一本通上a过了，就不多说了 </p>
+<p>我们需要：按照总分排序--&gt;如果总分相同就按照语文排序--&gt;否则按照学号从小到大排序 </p>
+<p>那么就需要我们熟练地掌握stable_sort函数的用法以及cmp函数的写法 </p>
+<p>灵活运用stl的函数显然可以帮助我们节省大量的代码，同时增强可读性 </p>
+<p><del>更重要的是p党没有sort函数什么的,我们一定要发挥优势</del> </p>
+<h3>代码:</h3>
+<pre><code class="hljs cpp"><span class="hljs-comment">//考场上当然是用stable_sort了事做下一题去了 </span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span>{</span>
+    <span class="hljs-keyword">int</span> num,chi,eng,mat;
+    <span class="hljs-keyword">int</span> sum;
+}a[<span class="hljs-number">1005</span>];
+<span class="hljs-keyword">int</span> n;
+<span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">cmp</span><span class="hljs-params">(node a,node b)</span><span class="hljs-comment">//按照总分排序--&gt;按照语文排序--&gt;按照学号从小到大排序 </span>
+</span>{
+    <span class="hljs-keyword">if</span>(a.sum==b.sum)
+        <span class="hljs-keyword">if</span>(a.chi==b.chi) <span class="hljs-keyword">return</span> a.num&lt;b.num;
+            <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> a.chi&gt;b.chi;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> a.sum&gt;b.sum;
+}
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">cin</span>&gt;&gt;n;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)
+    {
+        <span class="hljs-built_in">cin</span>&gt;&gt;a[i].chi&gt;&gt;a[i].mat&gt;&gt;a[i].eng;
+        a[i].sum=a[i].chi+a[i].mat+a[i].eng;
+        a[i].num=i;
+    }
+    stable_sort(a+<span class="hljs-number">1</span>,a+n+<span class="hljs-number">1</span>,cmp);
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=<span class="hljs-number">5</span>;i++)<span class="hljs-comment">//输出前五位同学 </span>
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d %d\n"</span>,a[i].num,a[i].sum);
+
+}</code></pre>
+<hr>
+<h2>T2 纪念品分组</h2>
+<h6>题目描述</h6>
+<blockquote>
+<p>元旦快到了，校学生会让乐乐负责新年晚会的纪念品发放工作。为使得参加晚会的同学所获得 的纪念品价值相对均衡，他要把购来的纪念品根据价格进行分组，但每组最多只能包括两件纪念品， 并且每组纪念品的价格之和不能超过一个给定的整数。为了保证在尽量短的时间内发完所有纪念品，乐乐希望分组的数目最少。<br>
+你的任务是写一个程序，找出所有分组方案中分组数最少的一种，输出最少的分组数目。 </p>
+</blockquote>
+<h6>输入描述:</h6>
+<blockquote>
+<p>第 1 行包括一个整数 w，为每组纪念品价格之和的上限。
+第 2 行为一个整数n，表示购来的纪念品的总件数。
+第 3 ~ n+2 行每行包含一个正整数 pi ( 5 ≤ pi ≤ w ) ，表示所对应纪念品的价格。 </p>
+</blockquote>
+<h6>输出描述:</h6>
+<blockquote>
+<p>包含一个整数，即最少的分组数目。</p>
+</blockquote>
+<h3>题目算法</h3>
+<blockquote>
+<p>排序、贪心 </p>
+</blockquote>
+<h3>思路</h3>
+<p><strong>首先每组最多只能包括两件纪念品</strong><br>
+这个限定一下子降低了题目难度 </p>
+<p>先排序，从后往前每次拿一个物品出来，找到一个最大的能与之配对的物品 </p>
+<p>本来想到二分找另一个跟它配对的物品，但是放弃了，<del>不知道在座的同学有没有其他做法</del> </p>
+<p>用贪心找到最大的跟它配对的物品，同时标记vis数组 </p>
+<p>注意vis标满了之后就该结束了 </p>
+<h3>代码</h3>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> n,w;
+<span class="hljs-keyword">int</span> a[<span class="hljs-number">30005</span>];
+<span class="hljs-keyword">bool</span> vis[<span class="hljs-number">30005</span>];
+<span class="hljs-keyword">int</span> ans=<span class="hljs-number">0</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">cin</span>&gt;&gt;w&gt;&gt;n;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++) 
+        <span class="hljs-built_in">cin</span>&gt;&gt;a[i];
+    stable_sort(a+<span class="hljs-number">1</span>,a+n+<span class="hljs-number">1</span>);
+    <span class="hljs-keyword">int</span> flag=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=n;i&gt;=<span class="hljs-number">1</span>;i--)<span class="hljs-comment">//倒序遍历 </span>
+    {
+        vis[i]=<span class="hljs-number">1</span>,flag++;
+        ans++;
+        <span class="hljs-keyword">int</span> tmp=w-a[i];<span class="hljs-comment">//找最大的&lt;=的tmp 的一个数 </span>
+        <span class="hljs-keyword">int</span> k=<span class="hljs-number">0</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;i;j++)<span class="hljs-comment">//正序查找 </span>
+        {
+            <span class="hljs-keyword">if</span>(vis[j]) <span class="hljs-keyword">continue</span>;
+            <span class="hljs-keyword">if</span>(a[j]&gt;tmp) <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">if</span>(a[j]&gt;a[k]) k=j; 
+        }
+        <span class="hljs-keyword">if</span>(k!=<span class="hljs-number">0</span>) vis[k]=<span class="hljs-number">1</span>,flag++;
+        <span class="hljs-keyword">if</span>(flag==n) <span class="hljs-keyword">break</span>;<span class="hljs-comment">//一切的终结 </span>
+    }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,ans);
+}</code></pre>
+<hr>
+<h2>T3 守望者的逃离</h2>
+<h6>题目描述</h6>
+<blockquote>
+<p>恶魔猎手尤迪安野心勃勃，他背叛了暗夜精灵，率领深藏在海底的娜迦族企图叛变。守望者在与尤迪安的交锋中遭遇了围杀，被困在一个荒芜的大岛上。为了杀死守望者，尤迪安开始对这个荒岛施咒，这座岛很快就会沉下去。到那时，岛上的所有人都会遇难。守望者的跑步速度为17m/s，以这样的速度是无法逃离荒岛的。庆幸的是守望者拥有闪烁法术，可在1s内移动60m，不过每次使用闪烁法术都会消耗魔法值10点。守望者的魔法值恢复的速度为4点/s，只有处在原地休息状态时才能恢复。<br>
+现在已知守望者的魔法初值M，他所在的初始位置与岛的出口之间的距离S，岛沉没的时间T。你的任务是写一个程序帮助守望者计算如何在最短的时间内逃离荒岛，若不能逃出，则输出守望者在剩下的时间内能走的最远距离。注意：守望者跑步、闪烁或休息活动均以秒(s)为单位，且每次活动的持续时间为整数秒。距离的单位为米(m)。 </p>
+</blockquote>
+<h6>输入描述:</h6>
+<blockquote>
+<p>包括空格隔开的三个非负整数M,S,T。 </p>
+</blockquote>
+<h6>输出描述:</h6>
+<blockquote>
+<p>第1行为字符串“Yes”或“No”（区分大小写），即守望者是否能逃离荒岛。
+第2行包含一个整数。第一行为“Yes”（区分大小写）时表示守望者逃离荒岛的最短时间；第一行为“No”（区分大小写）时表示守望者能走的最远距离。</p>
+</blockquote>
+<h3>题目算法</h3>
+<blockquote>
+<p>动态规划 <del>（迪屁）</del> 贪心</p>
+</blockquote>
+<h3>思路</h3>
+<p>这道题我本来想用模拟的方法做的 但是失败了 但是在座各位有大佬肯定有成功模拟的 </p>
+<p>首先这道题的目的是 </p>
+<p>按规定的方法规划出一种规定时间内行最远的方案 </p>
+<p>由于他每秒的状态满足无后效性，“未来与过去无关”，故选择动规 </p>
+<p>那么我们设计一下这个dp： </p>
+<p><strong>题目中提示了无论什么行动都按整秒计算，所以以时间划分阶段</strong> </p>
+<p><strong>我们用dp[i]表示在第i秒时，这个人所能到达的最远距离</strong></p>
+<p>由题意，每秒我们可以从下面3件选一件干 </p>
+<blockquote>
+<p>1.飞过去(但是魔法值必须大于等于10) （+60m）<br>
+2.摸鱼(休息回魔) （+0m）<br>
+3.玩跑步 （+17m） </p>
+</blockquote>
+<p>显然dp[i]只能从dp[i-1]转移而来<br>
+所以我们得到三个状态转移方程:<br>
+<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>=</mo><mi>d</mi><mi>p</mi><mo>[</mo><mi>i</mi><mo>−</mo><mn>1</mn><mo>]</mo><mo>+</mo><mn>6</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">dp[i]=dp[i-1]+60</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.75em;"></span><span class="strut bottom" style="height: 1em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mord">6</span><span class="mord">0</span></span></span></span></span></span>
+<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>=</mo><mi>d</mi><mi>p</mi><mo>[</mo><mi>i</mi><mo>−</mo><mn>1</mn><mo>]</mo><mo>+</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">dp[i]=dp[i-1]+0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.75em;"></span><span class="strut bottom" style="height: 1em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mord">0</span></span></span></span></span></span>
+<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi><mo>[</mo><mi>i</mi><mo>]</mo><mo>=</mo><mi>d</mi><mi>p</mi><mo>[</mo><mi>i</mi><mo>−</mo><mn>1</mn><mo>]</mo><mo>+</mo><mn>1</mn><mn>7</mn></mrow><annotation encoding="application/x-tex">dp[i]=dp[i-1]+17</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.75em;"></span><span class="strut bottom" style="height: 1em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mclose">]</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mord mathit">d</span><span class="mord mathit">p</span><span class="mopen">[</span><span class="mord mathit">i</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mord">1</span><span class="mclose">]</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mbin">+</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mord">1</span><span class="mord">7</span></span></span></span></span></span></p>
+<p>但是他有时要回魔 有时又要飞 或者跑 </p>
+<p>三种状态我们一下转移不过来 </p>
+<p>于是 我们当做他飞一下，摸一下鱼回魔，回够了然后又飞 </p>
+<p>而且在中间的某些时候他机智的选择玩跑步 </p>
+<p>所以我们就该处理两次dp数组 </p>
+<p>第一次填dp数组的时候他不跑步，只是飞和摸鱼 </p>
+<p>然后第二次在中间某些时候让 dp[i] 由 dp[i-1]+17 玩跑步转移而来 </p>
+<p>这样就可以保证dp[i]表示第i秒能够到的最远距离啦</p>
+<h3>代码</h3>
+<pre><code class="hljs cpp"><span class="hljs-comment">/*
+在尝试模拟失败后
+只好选择dp + 贪心了 
+虽然dp是个很整人的东西 但是理解了之后真的很爽
+*/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> dp[<span class="hljs-number">300005</span>];<span class="hljs-comment">//按时间轴进行动规 </span>
+<span class="hljs-keyword">int</span> m,s,t; 
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">"%d%d%d"</span>,&amp;m,&amp;s,&amp;t);
+    <span class="hljs-comment">//如果我们只能休息和飞</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=t;i++)       <span class="hljs-comment">//一秒一秒地决策 把问题分成非常简单的子问题 </span>
+    {
+        <span class="hljs-keyword">if</span>(m&gt;=<span class="hljs-number">10</span>)               <span class="hljs-comment">//可以飞一次 </span>
+        {
+            dp[i]=dp[i<span class="hljs-number">-1</span>]+<span class="hljs-number">60</span>;   <span class="hljs-comment">//从上一秒转移来</span>
+            m-=<span class="hljs-number">10</span>;              <span class="hljs-comment">//消耗掉膜法值 </span>
+        }
+        <span class="hljs-keyword">else</span>                    <span class="hljs-comment">//否则休息一秒 </span>
+        {
+            dp[i]=dp[i<span class="hljs-number">-1</span>];
+            m+=<span class="hljs-number">4</span>;               <span class="hljs-comment">//+4magic </span>
+        }
+    }
+    <span class="hljs-comment">//如果我们在 中间某几秒 选择玩跑步 </span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=t;i++)
+    {
+        dp[i]=max(dp[i],dp[i<span class="hljs-number">-1</span>]+<span class="hljs-number">17</span>);<span class="hljs-comment">//如果选择从上一秒跑步过来更快 更新dp值 </span>
+        <span class="hljs-keyword">if</span>(dp[i] &gt;= s)          <span class="hljs-comment">//如果已经有方案可以逃出去了 那么这里的i一定是所求的最短时间 </span>
+        {
+            <span class="hljs-built_in">printf</span>(<span class="hljs-string">"Yes\n%d"</span>,i);
+            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;           <span class="hljs-comment">//直接结束 </span>
+        }
+    }
+    <span class="hljs-built_in">printf</span>(<span class="hljs-string">"No\n%d"</span>,dp[t]);<span class="hljs-comment">//如果dp[t]都&lt;=s 说明到了t时间都走不出去 </span>
+}</code></pre>
+<hr>
+<h2>T4 Hanoi双塔问题</h2>
+<h6>题目描述</h6>
+<blockquote>
+<p>给定A、B、C三根足够长的细柱，在A柱上放有2n个中间有孔的圆盘，共有n个不同的尺寸，每个尺寸都有两个相同的圆盘，注意这两个圆盘是不加区分的（下图为n=3的情形）。现要将这些圆盘移到C柱上，在移动过程中可放在B柱上暂存。要求：<br>
+（1）每次只能移动一个圆盘；<br>
+（2）A、B、C三根细柱上的圆盘都要保持上小下大的顺序；<br>
+任务：设An为2n个圆盘完成上述任务所需的最少移动次数，对于输入的n，输出An。<br>
+<img src="./NOIP-2007普及组题解报告 - ty的笔记本 - 洛谷博客_files/305281_1528993453083_7673A9888110E5E39181300DE876C2A4" alt="牛客网的图片"></p>
+</blockquote>
+<h6>输入描述:</h6>
+<blockquote>
+<p>输入一个正整数n，表示在A柱上放有2n个圆盘。 </p>
+</blockquote>
+<h6>输出描述:</h6>
+<blockquote>
+<p>输出一个正整数, 为完成上述任务所需的最少移动次数An。</p>
+</blockquote>
+<h3>题目算法</h3>
+<blockquote>
+<p>高精度 找规律 递归&amp;二进制 </p>
+</blockquote>
+<h3>思路</h3>
+<p>这个题其实比T3还简单，当然如果你高精度比较熟练的话<br>
+你只需要把汉诺塔的步数找到 然后乘以2就可以了<br>
+关于汉诺塔的步数，我们有很多种方法找到:<br>
+你可以打出当初学的递归代码来打表 </p>
+<pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">hanoi</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n,<span class="hljs-keyword">char</span> a,<span class="hljs-keyword">char</span> b,<span class="hljs-keyword">char</span> c)</span>
+</span>{
+    <span class="hljs-keyword">if</span>(n==<span class="hljs-number">1</span>) ans++;
+    <span class="hljs-keyword">else</span>
+    {
+        hanoi(n<span class="hljs-number">-1</span>,a,c,b);
+        ans++;
+        hanoi(n<span class="hljs-number">-1</span>,b,a,c);
+    }
+}</code></pre>
+<p>然而其实 汉诺塔的步数与<strong>二进制</strong>有紧密的联系 </p>
+<p>让我们来康康普通汉诺塔的步数和二进制的关系 </p>
+<p>设盘子数为n，步数为steps<br>
+当盘子数为3<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">n = 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.64444em; vertical-align: 0em;"></span><span class="base"><span class="mord mathit">n</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mord">3</span></span></span></span></span></span>
+有<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>t</mi><mi>e</mi><mi>p</mi><mi>s</mi><mo>=</mo><mo>(</mo><mn>7</mn><msub><mo>)</mo><mrow><mn>1</mn><mn>0</mn></mrow></msub><mo>=</mo><mo>(</mo><mn>1</mn><mn>1</mn><mn>1</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">steps = (7)_{10} = (111)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.75em;"></span><span class="strut bottom" style="height: 1em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">s</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">p</span><span class="mord mathit">s</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mopen">(</span><span class="mord">7</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"></span></span></span></span></span></span></span></span></span></span>
+当盘子数为4<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">n = 4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.64444em; vertical-align: 0em;"></span><span class="base"><span class="mord mathit">n</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mord">4</span></span></span></span></span></span>
+有<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>t</mi><mi>e</mi><mi>p</mi><mi>s</mi><mo>=</mo><mo>(</mo><mn>1</mn><mn>5</mn><msub><mo>)</mo><mrow><mn>1</mn><mn>0</mn></mrow></msub><mo>=</mo><mo>(</mo><mn>1</mn><mn>1</mn><mn>1</mn><mn>1</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">steps = (15)_{10} = (1111)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.75em;"></span><span class="strut bottom" style="height: 1em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">s</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">p</span><span class="mord mathit">s</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">5</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"></span></span></span></span></span></span></span></span></span></span>
+当盘子数为5<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">n = 5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.64444em;"></span><span class="strut bottom" style="height: 0.64444em; vertical-align: 0em;"></span><span class="base"><span class="mord mathit">n</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mord">5</span></span></span></span></span></span>
+有<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>t</mi><mi>e</mi><mi>p</mi><mi>s</mi><mo>=</mo><mo>(</mo><mn>3</mn><mn>1</mn><msub><mo>)</mo><mrow><mn>1</mn><mn>0</mn></mrow></msub><mo>=</mo><mo>(</mo><mn>1</mn><mn>1</mn><mn>1</mn><mn>1</mn><mn>1</mn><msub><mo>)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">steps = (31)_{10} = (11111)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.75em;"></span><span class="strut bottom" style="height: 1em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">s</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">p</span><span class="mord mathit">s</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mopen">(</span><span class="mord">3</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mopen">(</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"></span></span></span></span></span></span></span></span></span></span>
+<strong>总结规律</strong><span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo><mi>s</mi><mi>t</mi><mi>e</mi><mi>p</mi><mi>s</mi><mo>=</mo><mo>(</mo><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn><msub><mo>)</mo><mrow><mn>1</mn><mn>0</mn></mrow></msub><mo>=</mo><mo fence="false">(</mo><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><munder><mrow><mn>1</mn><mn>1</mn><mo>⋯</mo><mn>1</mn><mn>1</mn></mrow><mo stretchy="true">⎵</mo></munder></mrow></mstyle></mtd></mtr><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>n</mi></mrow></mstyle></mtd></mtr></mtable><msub><mo fence="false">)</mo><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\Rightarrow steps = (2^n-1)_{10}=\bigg(\begin{matrix}\underbrace{11\cdots11}\\n \end{matrix}\bigg)_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 1.594em;"></span><span class="strut bottom" style="height: 2.688em; vertical-align: -1.094em;"></span><span class="base"><span class="mrel">⇒</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mord mathit">s</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">p</span><span class="mord mathit">s</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.714392em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span></span></span></span></span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mord">1</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.301108em;"><span class="" style="top: -2.55em; margin-left: 0em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span><span class="mord mtight">0</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mord"><span class="delimsizing size3">(</span></span><span class="mord"><span class="mtable"><span class="col-align-c"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.594em;"><span class="" style="top: -3.754em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord munder"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 0.64444em;"><span class="svg-align" style="top: -2.352em;"><span class="pstrut" style="height: 3em;"></span><span class="stretchy" style="height: 0.548em; min-width: 1.6em;"><span class="brace-left" style="height: 0.548em;"><svg width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMinYMin slice"><path d="M0 6l6-6h17c12.688 0 19.313.3 20 1 4 4 7.313 8.3 10 13
+ 35.313 51.3 80.813 93.8 136.5 127.5 55.688 33.7 117.188 55.8 184.5 66.5.688
+ 0 2 .3 4 1 18.688 2.7 76 4.3 172 5h399450v120H429l-6-1c-124.688-8-235-61.7
+-331-161C60.687 138.7 32.312 99.3 7 54L0 41V6z"></path></svg></span><span class="brace-center" style="height: 0.548em;"><svg width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMidYMin slice"><path d="M199572 214
+c100.7 8.3 195.3 44 280 108 55.3 42 101.7 93 139 153l9 14c2.7-4 5.7-8.7 9-14
+ 53.3-86.7 123.7-153 211-199 66.7-36 137.3-56.3 212-62h199568v120H200432c-178.3
+ 11.7-311.7 78.3-403 201-6 8-9.7 12-11 12-.7.7-6.7 1-18 1s-17.3-.3-18-1c-1.3 0
+-5-4-11-12-44.7-59.3-101.3-106.3-170-141s-145.3-54.3-229-60H0V214z"></path></svg></span><span class="brace-right" style="height: 0.548em;"><svg width="400em" height="0.548em" viewBox="0 0 400000 548" preserveAspectRatio="xMaxYMin slice"><path d="M399994 0l6 6v35l-6 11c-56 104-135.3 181.3-238 232-57.3
+ 28.7-117 45-179 50H-300V214h399897c43.3-7 81-15 113-26 100.7-33 179.7-91 237
+-174 2.7-5 6-9 10-13 .7-1 7.3-1 20-1h17z"></path></svg></span></span></span><span class="" style="top: -3em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">1</span><span class="mord">1</span><span class="mord rule" style="margin-right: 0.166667em;"></span><span class="minner">⋯</span><span class="mord rule" style="margin-right: 0.166667em;"></span><span class="mord">1</span><span class="mord">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.648em;"></span></span></span></span></span></span><span class="" style="top: -2.266em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord mathit">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 1.094em;"></span></span></span></span></span></span><span class="mord"><span class="mord"><span class="delimsizing size3">)</span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist"><span class="" style="top: -1.70027em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.99973em;"></span></span></span></span></span></span></span></span></span></span>
+<strong>汉诺塔的步数等于一个二进制数，这个二进制数由盘子数个1构成</strong> </p>
+<p>诶你说为什么它恰好有这么一个规律呢 </p>
+<p>因为二进制的计数节奏与汉诺塔盘子的移动有神奇的巧合 </p>
+<p><strong>当最右边的那位数加到1时，移动的一定是最小号盘子</strong> </p>
+<p><strong>意思就是：二进制计数时，第几位变为了1，那么移动的一定是第几号盘子</strong><br>
+这里我用win7 mspaint画了一张图（落谷给我的作品打了一个硕大的水印）
+<img src="./NOIP-2007普及组题解报告 - ty的笔记本 - 洛谷博客_files/34907.png" alt="看我们移动了4号盘子！！！"></p>
+<p>可能这就算数学上的巧合什么的吧</p>
+<p>根据题意 有：
+<span><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mi>t</mi><mi>e</mi><mi>p</mi><mi>s</mi><mo>=</mo><mo>(</mo><msup><mn>2</mn><mi>n</mi></msup><mo>−</mo><mn>1</mn><mo>)</mo><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">steps = (2^n-1)\times2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height: 0.75em;"></span><span class="strut bottom" style="height: 1em; vertical-align: -0.25em;"></span><span class="base"><span class="mord mathit">s</span><span class="mord mathit">t</span><span class="mord mathit">e</span><span class="mord mathit">p</span><span class="mord mathit">s</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right: 0.277778em;"></span><span class="mopen">(</span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height: 0.714392em;"><span class="" style="top: -3.113em; margin-right: 0.05em;"><span class="pstrut" style="height: 2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight">n</span></span></span></span></span></span></span></span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mbin">−</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mbin">×</span><span class="mord rule" style="margin-right: 0.222222em;"></span><span class="mord">2</span></span></span></span></span></span>
+还有注意题目中是双塔所以要乘2！ </p>
+<p>由于n比较大导致必须用高精度<br>
+高精度就是大家记的模版了，值得一提的是由于最后一位肯定大于1，所以连高精减都不用写了，高精度乘法足矣。</p>
+<h3>代码</h3>
+<pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;bits/stdc++.h&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-keyword">int</span> n;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">1005</span>,base = <span class="hljs-number">10000</span>;
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">bignum</span>{</span>
+    <span class="hljs-keyword">int</span> len,s[maxn];
+    bignum(){len=<span class="hljs-number">1</span>;<span class="hljs-built_in">memset</span>(s,<span class="hljs-number">0</span>,<span class="hljs-keyword">sizeof</span> s);}
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">zero</span><span class="hljs-params">()</span></span>{<span class="hljs-keyword">while</span>(len&gt;<span class="hljs-number">1</span> &amp;&amp; s[len]==<span class="hljs-number">0</span>) len--;}
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">write</span><span class="hljs-params">(<span class="hljs-keyword">char</span> a[])</span></span>{
+        <span class="hljs-keyword">int</span> lena=<span class="hljs-built_in">strlen</span>(a),k=<span class="hljs-number">1</span>;
+        len=<span class="hljs-number">1</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>;i&lt;lena;i++)<span class="hljs-comment">//把字符串转换 写入s数组 </span>
+        {
+            s[len] += (a[lena-i<span class="hljs-number">-1</span>]-<span class="hljs-string">'0'</span>)*k;<span class="hljs-comment">//由于数组从0开始，所以a[lena-i-1] </span>
+            k*=<span class="hljs-number">10</span>;
+            <span class="hljs-keyword">if</span>(k==base)<span class="hljs-comment">//满4位进一个len</span>
+                k=<span class="hljs-number">1</span>,len++;
+        }
+    }
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">()</span></span>{
+        zero();
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%d"</span>,s[len]);
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=len<span class="hljs-number">-1</span>;i&gt;=<span class="hljs-number">1</span>;i--) <span class="hljs-built_in">printf</span>(<span class="hljs-string">"%04d"</span>,s[i]);
+    }
+    <span class="hljs-keyword">void</span> <span class="hljs-keyword">operator</span> = (<span class="hljs-keyword">int</span> num){
+        <span class="hljs-keyword">char</span> a[maxn*<span class="hljs-number">4</span>];
+        <span class="hljs-built_in">sprintf</span>(a,<span class="hljs-string">"%d"</span>,num);
+        write(a);
+    }
+    bignum <span class="hljs-keyword">operator</span> * (bignum b){
+        bignum c;
+        c.len=len+b.len+<span class="hljs-number">2</span>;
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=len;i++)
+        {
+            <span class="hljs-keyword">int</span> x=<span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>;j&lt;=b.len;j++)
+            {
+                c.s[i+j<span class="hljs-number">-1</span>]+=s[i]*b.s[j]+x;
+                x=c.s[i+j<span class="hljs-number">-1</span>]/base;
+                c.s[i+j<span class="hljs-number">-1</span>]%=base;
+            }
+            c.s[i+b.len]=x;
+        }
+        c.zero();
+        *<span class="hljs-keyword">this</span> = c;
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span>;
+    }
+    bignum <span class="hljs-keyword">operator</span> * (<span class="hljs-keyword">int</span> b){
+        bignum bb;
+        bb = b;
+        <span class="hljs-keyword">return</span> *<span class="hljs-keyword">this</span> * bb;
+    }
+};
+<span class="hljs-comment">//啊我累死了 复习了高精度 </span>
+bignum ans;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span>
+</span>{
+    <span class="hljs-built_in">cin</span>&gt;&gt;n;
+    ans=<span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">1</span>;i&lt;=n;i++)<span class="hljs-comment">//你甚至可以不用快速幂</span>
+        ans = ans * <span class="hljs-number">2</span>;
+    ans.s[<span class="hljs-number">1</span>]--;
+    ans = ans*<span class="hljs-number">2</span>;
+    ans.print();
+}</code></pre>
+<hr>
+<h2>那么我就讲完了，谢谢大家</h2>
+<h2>再见达瓦里氏</h2>
+</div>
+</div>
+<div id="blog-comments" class="mdui-shadow-2 mdui-hoverable" style="padding: 40px; margin-top: 15px;"><div class="mdui-valign" style="margin-bottom: 30px;"><div class="mdui-textfield mdui-textfield-floating-label mdui-float-left" style="width: 95%; margin-right: 20px;"><label class="mdui-textfield-label">评论</label> <textarea class="mdui-textfield-input mdui-float-left-right"></textarea></div> <button class="mdblog-comment-send-btn mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">send</i></button></div> <div class="mdblog-comments mdui-container"> <div class="mdui-valign" style="margin: 30px;"><div class="mdui-center"><!----></div></div></div></div>
+<div id="vote-buttons" mdui-fab="options" class="mdui-fab-wrapper"><button class="mdui-fab mdui-ripple mdui-color-theme-accent"><i class="mdui-icon material-icons">add</i> <i id="mdblog-scroll" class="mdui-icon mdui-fab-opened material-icons">keyboard_arrow_up</i></button> <div class="mdui-fab-dial"><button hidden="hidden" class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-red"><i class="mdui-icon material-icons">cancel</i></button> <button class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-red"><i class="mdui-icon material-icons">thumb_up</i></button> <button class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-teal"><i class="mdui-icon material-icons">thumb_down</i></button> <a href="https://www.luogu.org/blog/tythen/noip-2007#blog-comments" class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-orange"><i class="mdui-icon material-icons">chat</i></a> <a href="https://www.luogu.org/blogAdmin/article/edit/70378" class="mdblog-fab-icon mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue"><i class="mdui-icon material-icons">edit</i></a></div></div>
+</div>
+<link rel="stylesheet" href="./NOIP-2007普及组题解报告 - ty的笔记本 - 洛谷博客_files/katex.css">
+</section>
+</main>
+<section>
+<div class="mdui-drawer mdui-drawer-close" id="mdblog-drawer">
+<ul class="mdui-list">
+<li onclick="window.location.href=&#39;.&#39;;" class="mdui-list-item mdui-ripple">
+<i class="mdui-list-item-icon mdui-icon material-icons">star</i>
+<div class="mdui-list-item-content">首页</div>
+</li>
+<li onclick="window.location.href=&#39;https://www.luogu.org/blogAdmin&#39;;" class="mdui-list-item mdui-ripple">
+<i class="mdui-list-item-icon mdui-icon material-icons">error</i>
+<div class="mdui-list-item-content">管理后台</div>
+</li>
+</ul>
+</div>
+</section>
+<br>
+<footer class="mdui-color-theme">
+<div class="mdui-valign">
+<p class="mdui-center">
+自豪地采用<a href="https://www.luogu.org/" style="color: white;">洛谷</a>博客&nbsp;
+Theme mdblog by <a href="https://darkflames.blog.luogu.org/" style="color: white;">darkflames</a>. <a href="https://www.luogu.org/blog/tythen/_sitemap">Site Map</a>
+</p>
+</div>
+</footer>
+<script>
+window.BlogGlobals = {
+  blogName: document.querySelector('meta[name=blog-name]').getAttribute('content'),
+  blogUID: parseInt(document.querySelector('meta[name=blog-uid]').getAttribute('content')),
+  currentUser: parseInt(document.querySelector('meta[name=current-user]').getAttribute('content')),
+  isAuthor: (this.blogUID === this.currentUser),
+  luoguAddress: 'https://www.luogu.org',
+  picAddress: 'https://cdn.luogu.org',
+  config: JSON.parse(document.querySelector('meta[name=theme-settings]').getAttribute('content'))
+}
+</script>
+<script src="./NOIP-2007普及组题解报告 - ty的笔记本 - 洛谷博客_files/common.js"></script>
+<script>
+var blogContainer = document.getElementById('blog-container')
+BlogGlobals.blogID = parseInt(blogContainer.getAttribute('data-blogid'))
+BlogGlobals.vote = parseInt(blogContainer.getAttribute('data-vote'))
+BlogGlobals.thumbUp = parseInt(blogContainer.getAttribute('data-thumbUp'))
+</script>
+<script src="./NOIP-2007普及组题解报告 - ty的笔记本 - 洛谷博客_files/article.js"></script>
+
+
+</body></html>
